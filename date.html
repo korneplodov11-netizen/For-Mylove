@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Выбор свидания ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+background:linear-gradient(135deg,#ffb6d9,#ffeaf3);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow:auto;
+padding:20px;
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+width:100%;
+
+max-width:430px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:25px;
+
+padding:25px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+}
+
+h1{
+
+color:white;
+
+margin-bottom:25px;
+
+}
+
+.wrapper{
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<h1>❤️ Что бы ты хотела? ❤️</h1>
+
+<div class="grid">
+
+<div class="card" onclick="choose('🌃 Прогулка')">
+🌃<br><br>
+Прогулка
+</div>
+
+<div class="card" onclick="choose('🍣 Ресторан')">
+🍣<br><br>
+Ресторан
+</div>
+
+<div class="card" onclick="choose('🎬 Кино')">
+🎬<br><br>
+Кино
+</div>
+
+<div class="card" onclick="choose('🧺 Пикник')">
+🧺<br><br>
+Пикник
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function choose(type){
+
+localStorage.setItem("dateType",type);
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+window.location.href="calendar.html";
+
+},700);
+
+}
+
+</script>
+
+</body>
+</html>
