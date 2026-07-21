@@ -234,3 +234,54 @@ transform:translateY(0);
 }
 
 }
+button{
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+button:hover{
+
+transform:translateY(-3px) scale(1.05);
+
+}
+
+.card{
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.card:hover{
+
+transform:translateY(-8px) scale(1.06);
+
+}
+
+.photo{
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
