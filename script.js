@@ -103,3 +103,37 @@ showSlide(currentSlide);
 
 // Пока просто спасибо
 document.getElementById("finishBtn").
+// ===== Падающие сердечки =====
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "-30px";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "999";
+
+    const duration = 4 + Math.random() * 3;
+
+    heart.animate([
+        { transform: "translateY(0px)", opacity: 1 },
+        { transform: `translateY(${window.innerHeight + 50}px) rotate(${Math.random()*360}deg)`, opacity: 0 }
+    ], {
+        duration: duration * 1000,
+        easing: "linear"
+    });
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
+
+}
+
+setInterval(createHeart, 350);
