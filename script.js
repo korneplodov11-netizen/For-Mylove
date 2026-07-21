@@ -1,4 +1,4 @@
-const slides = document.querySelectorAll(".slide");
+let selectedType = ""; const slides = document.querySelectorAll(".slide");
 
 let currentSlide = 0;
 let selectedDate = "";
