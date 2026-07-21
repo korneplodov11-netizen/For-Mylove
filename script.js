@@ -104,6 +104,7 @@ currentSlide=3;
 
 showSlide(currentSlide);
 
+confetti();
 };
 
 // Пока просто спасибо
@@ -158,3 +159,58 @@ btn.style.transform="scale(1)";
 });
 
 });
+// ===== Конфетти =====
+
+function confetti() {
+
+    for (let i = 0; i < 120; i++) {
+
+        const c = document.createElement("div");
+
+        c.style.position = "fixed";
+        c.style.left = Math.random() * 100 + "vw";
+        c.style.top = "-20px";
+        c.style.width = "10px";
+        c.style.height = "10px";
+        c.style.borderRadius = "50%";
+
+        const colors = [
+            "#ff4f93",
+            "#ff77b7",
+            "#ffd54f",
+            "#ffffff",
+            "#ffb3d9"
+        ];
+
+        c.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        c.style.pointerEvents = "none";
+        c.style.zIndex = "9999";
+
+        const time = 2500 + Math.random() * 1500;
+
+        c.animate([
+            {
+                transform: "translateY(0px) rotate(0deg)"
+            },
+            {
+                transform:
+                    `translateY(${window.innerHeight + 100}px) rotate(${720 + Math.random()*720}deg)`
+            }
+        ], {
+            duration: time,
+            easing: "linear"
+        });
+
+        document.body.appendChild(c);
+
+        setTimeout(() => {
+
+            c.remove();
+
+        }, time);
+
+    }
+
+}
