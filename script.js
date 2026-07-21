@@ -52,8 +52,7 @@ document.querySelectorAll(".card").forEach(card=>{
 
 card.onclick=()=>{
 
-selectedDate=card.dataset.value;
-
+selectedType = card.dataset.value;
 currentSlide=2;
 
 showSlide(currentSlide);
@@ -75,12 +74,13 @@ return;
 
 }
 
-document.getElementById("finalText").innerHTML=`
-❤️ Отличный выбор!
+document.getElementById("finalText").innerHTML = `
+<h2>🥹 Спасибо, любимая ❤️</h2>
 
-<br><br>
+<p>
+Ты выбрала:<br><br>
 
-<b>${selectedDate}</b>
+<b>${selectedType}</b>
 
 <br><br>
 
@@ -88,11 +88,16 @@ document.getElementById("finalText").innerHTML=`
 
 <br><br>
 
-Жди меня, солнце ☀️
+Хорошо, отличный выбор свидания ❤️
 
 <br><br>
 
-Я уже очень жду нашей встречи ❤️
+Жди меня, солнце ☀️
+
+<br>
+
+Я приеду к тебе с подарочком, любимая 🎁💕
+</p>
 `;
 
 currentSlide=3;
