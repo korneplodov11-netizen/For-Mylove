@@ -108,7 +108,7 @@ confetti();
 };
 
 // Пока просто спасибо
-document.getElementById("finishBtn").onclick=()=>{
+document.getElementById("finishBtn").onclick = async () => {
 
     const dateValue = document.getElementById("date").value;
 
@@ -116,20 +116,25 @@ document.getElementById("finishBtn").onclick=()=>{
     const chosenDate = parts[0];
     const chosenTime = parts[1];
 
-    fetch("https://script.google.com/macros/s/AKfycbyfaGc39xorjjcT5NeKd9c2YLRiExtUDcJUX9V_IEMLCwrQr480LKPE6fP3ptPW7rQ5/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "text/plain"
-        },
-        body: JSON.stringify({
-            type: selectedType,
-            date: chosenDate,
-            time: chosenTime
-        })
-    });
+    try {
+        await fetch("https://script.google.com/macros/s/AKfycbyfaGc39xorjjcT5NeKd9c2YLRiExtUDcJUX9V_IEMLCwrQr480LKPE6fP3ptPW7rQ5/exec", {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain"
+            },
+            body: JSON.stringify({
+                type: selectedType,
+                date: chosenDate,
+                time: chosenTime
+            })
+        });
 
-    alert("❤️ Спасибо, любимая ❤️");
+        alert("❤️ Выбор сохранён");
+    } catch (error) {
+        alert("Ошибка отправки");
+        console.log(error);
+    }
 };
 // ===== Падающие сердечки =====
 
