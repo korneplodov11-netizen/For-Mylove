@@ -941,3 +941,13 @@ transform:translateY(0);
         opacity:0;
     }
 }
+.panda{
+    display:block !important;
+    width:180px !important;
+    height:180px !important;
+    object-fit:contain !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    position:relative !important;
+    z-index:20 !important;
+}
