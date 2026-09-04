@@ -523,3 +523,48 @@ transform:translateY(0);
         transform:translateY(0);
     }
 }
+/* ===== ИСПРАВЛЕНИЕ ПЕРВОГО ЭКРАНА ===== */
+
+#slide1{
+    justify-content:flex-start;
+    padding-top:45px;
+    overflow-y:auto;
+    gap:12px;
+}
+
+#slide1 .photo{
+    width:180px;
+    height:180px;
+    flex-shrink:0;
+    margin:0 0 10px 0;
+}
+
+#slide1 h1{
+    margin:5px 0 10px;
+    font-size:30px;
+}
+
+#slide1 .text{
+    max-width:600px;
+    margin:0 auto 15px;
+    font-size:18px;
+    line-height:1.6;
+}
+
+#slide1 button{
+    flex-shrink:0;
+}
+
+/* Панда двигается аккуратно, без увеличения */
+#slide1 .panda{
+    animation:pandaCute 2.5s ease-in-out infinite;
+}
+
+@keyframes pandaCute{
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+    50%{
+        transform:translateY(-10px) rotate(2deg);
+    }
+}
