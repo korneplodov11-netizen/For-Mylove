@@ -53,16 +53,12 @@ document.getElementById("memoryContinueBtn").onclick=()=>{
 
 // Выбор свидания
 document.querySelectorAll(".card").forEach(card=>{
+    card.onclick=()=>{
+        selectedType=card.dataset.value;
 
-card.onclick=()=>{
-
-selectedType = card.dataset.value;
-currentSlide=2;
-
-showSlide(currentSlide);
-
-}
-
+        document.getElementById("slide2").classList.remove("active");
+        document.getElementById("slide3").classList.add("active");
+    }
 });
 
 // Далее
@@ -104,9 +100,8 @@ document.getElementById("finalText").innerHTML = `
 </p>
 `;
 
-currentSlide=3;
-
-showSlide(currentSlide);
+document.getElementById("slide3").classList.remove("active");
+document.getElementById("slide4").classList.add("active");
 
 confetti();
 };
