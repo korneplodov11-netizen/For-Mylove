@@ -568,3 +568,133 @@ transform:translateY(0);
         transform:translateY(-10px) rotate(2deg);
     }
 }
+/* ===== ВОСПОМИНАНИЯ: ФОТО + ТЕКСТ ===== */
+
+#memorySlide{
+    overflow:hidden;
+    position:relative;
+}
+
+.memoryArea{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.memoryPhoto{
+    position:absolute;
+    width:180px;
+    height:230px;
+    object-fit:cover;
+    border-radius:22px;
+    border:4px solid white;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    bottom:-260px;
+    animation:memoryFly 8s linear forwards;
+}
+
+.memoryPhoto:nth-child(1){
+    left:6%;
+    animation-delay:0s;
+}
+
+.memoryPhoto:nth-child(2){
+    right:6%;
+    animation-delay:1.5s;
+}
+
+.memoryPhoto:nth-child(3){
+    left:18%;
+    animation-delay:3s;
+}
+
+.memoryPhoto:nth-child(4){
+    right:15%;
+    animation-delay:4.5s;
+}
+
+@keyframes memoryFly{
+    0%{
+        bottom:-260px;
+        opacity:0;
+        transform:rotate(-4deg);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    85%{
+        opacity:1;
+    }
+
+    100%{
+        bottom:110%;
+        opacity:0;
+        transform:rotate(4deg);
+    }
+}
+
+/* Волшебные фразы */
+.memoryWords{
+    position:absolute;
+    top:90px;
+    left:50%;
+    transform:translateX(-50%);
+    width:88%;
+    max-width:420px;
+    z-index:30;
+    text-align:center;
+}
+
+.memoryWords p{
+    position:absolute;
+    width:100%;
+    color:white;
+    font-size:20px;
+    line-height:1.5;
+    opacity:0;
+    text-shadow:0 3px 12px rgba(0,0,0,.25);
+    animation:memoryWordsFade 2.4s ease forwards;
+}
+
+.memoryWords p:nth-child(1){animation-delay:.5s;}
+.memoryWords p:nth-child(2){animation-delay:2.5s;}
+.memoryWords p:nth-child(3){animation-delay:4.5s;}
+.memoryWords p:nth-child(4){animation-delay:6.5s;}
+
+@keyframes memoryWordsFade{
+    0%{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    20%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+}
+
+/* Кнопка сначала скрыта */
+#memoryContinueBtn{
+    position:relative;
+    z-index:40;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1s ease;
+}
+
+#memoryContinueBtn.show{
+    opacity:1;
+    pointer-events:auto;
+}
