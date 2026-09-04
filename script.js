@@ -48,7 +48,7 @@ yesBtn.addEventListener("click",()=>{
 
     setTimeout(()=>{
         document.getElementById("memoryContinueBtn").classList.add("show");
-    },9000);
+    },18000);
 });
 
 // Кнопка после воспоминаний
