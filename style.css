@@ -880,3 +880,64 @@ transform:translateY(0);
     opacity:1;
     pointer-events:auto;
 }
+/* ===== ФИНАЛЬНАЯ НАСТРОЙКА ФОТО ===== */
+
+.memoryPhoto{
+    width:min(48vw, 280px);
+    height:min(62vw, 350px);
+
+    object-fit:cover;
+    border-radius:24px;
+    border:5px solid white;
+
+    position:absolute;
+    bottom:-380px;
+
+    animation:memoryLoop 12s linear infinite !important;
+    animation-play-state:paused;
+}
+
+#memorySlide.active .memoryPhoto{
+    animation-play-state:running;
+}
+
+/* Чтобы фотки шли постоянно одна за другой */
+.memoryPhoto:nth-child(1){
+    left:4%;
+    animation-delay:0s !important;
+}
+
+.memoryPhoto:nth-child(2){
+    right:4%;
+    animation-delay:-3s !important;
+}
+
+.memoryPhoto:nth-child(3){
+    left:18%;
+    animation-delay:-6s !important;
+}
+
+.memoryPhoto:nth-child(4){
+    right:16%;
+    animation-delay:-9s !important;
+}
+
+@keyframes memoryLoop{
+    0%{
+        transform:translateY(0) rotate(-4deg);
+        opacity:0;
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    92%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-155vh) rotate(4deg);
+        opacity:0;
+    }
+}
