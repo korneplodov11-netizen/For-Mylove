@@ -970,3 +970,30 @@ transform:translateY(0);
 .memoryWords p:nth-child(4){
     animation-delay:14s !important;
 }
+/* ===== ТЕКСТ НА ВСЁМ САЙТЕ ===== */
+
+.slide h1,
+.slide h2 {
+    color: #8f3158;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.8);
+}
+
+.slide p,
+.magicText,
+.memoryWords,
+#finalText {
+    color: #71334e;
+}
+
+/* Волшебные слова */
+.magicText {
+    background: rgba(255,255,255,0.55);
+    padding: 18px 24px;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(143,49,88,0.12);
+}
+
+/* Финальный текст */
+#finalText {
+    background: rgba(255,255,255,0.55);
+}
