@@ -43,9 +43,13 @@ noBtn.addEventListener("click",()=>{
 
 // Кнопка Да
 yesBtn.addEventListener("click",()=>{
-    currentSlide=1;
-    showSlide(currentSlide);
+    document.getElementById("slide1").classList.remove("active");
+    document.getElementById("memorySlide").classList.add("active");
 });
+document.getElementById("memoryContinueBtn").onclick=()=>{
+    document.getElementById("memorySlide").classList.remove("active");
+    document.getElementById("slide2").classList.add("active");
+};
 
 // Выбор свидания
 document.querySelectorAll(".card").forEach(card=>{
