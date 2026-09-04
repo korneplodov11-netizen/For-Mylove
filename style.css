@@ -300,3 +300,74 @@ transform:translateY(0);
         transform: translateY(0) rotate(-2deg);
     }
 }
+/* ===== ВОСПОМИНАНИЯ ===== */
+
+.memoryArea{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.memoryPhoto{
+    position:absolute;
+    width:160px;
+    border-radius:20px;
+    border:5px solid white;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    bottom:-220px;
+    animation:memoryFly 9s linear forwards;
+}
+
+.memoryPhoto:nth-child(1){
+    left:5%;
+    animation-delay:0s;
+}
+
+.memoryPhoto:nth-child(2){
+    right:5%;
+    animation-delay:1.5s;
+}
+
+.memoryPhoto:nth-child(3){
+    left:20%;
+    animation-delay:3s;
+}
+
+.memoryPhoto:nth-child(4){
+    right:15%;
+    animation-delay:4.5s;
+}
+
+@keyframes memoryFly{
+    0%{
+        transform:translateY(0) rotate(-4deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    85%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(4deg);
+        opacity:0;
+    }
+}
+
+#memoryContinue{
+    position:relative;
+    z-index:20;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1s ease;
+}
+
+#memoryContinue.show{
+    opacity:1;
+    pointer-events:auto;
+}
