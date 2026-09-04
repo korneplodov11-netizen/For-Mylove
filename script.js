@@ -45,12 +45,17 @@ noBtn.addEventListener("click",()=>{
 yesBtn.addEventListener("click",()=>{
     document.getElementById("slide1").classList.remove("active");
     document.getElementById("memorySlide").classList.add("active");
+
+    setTimeout(()=>{
+        document.getElementById("memoryContinueBtn").classList.add("show");
+    },9000);
 });
+
+// Кнопка после воспоминаний
 document.getElementById("memoryContinueBtn").onclick=()=>{
     document.getElementById("memorySlide").classList.remove("active");
     document.getElementById("slide2").classList.add("active");
 };
-
 // Выбор свидания
 document.querySelectorAll(".card").forEach(card=>{
     card.onclick=()=>{
